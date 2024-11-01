@@ -8,7 +8,7 @@ int main(){
     cin>>a>>b;
 
     for (double i = a; i <= b; i++){
-        cout<<i<<" ";
+        cout<<(int)i<<" ";
         double cel;
         cel = (i - 32) * 5/9;
         cout<<setprecision(2)<<fixed<<cel<<" ";
