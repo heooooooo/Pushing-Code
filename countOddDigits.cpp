@@ -11,13 +11,13 @@ void countOddDigits(int n){
         n /= 10;
         
         if (lastDigit % 2 == 0){
-            countOdds += 1;
-        }
-        else{
             countEvens += 1;
         }
+        else{
+            countOdds += 1;
+        }
     }
-    cout << countOdds << " " << countEvens << endl;
+    cout << countEvens << " " << countOdds << endl;
 }
 
 int main(){
