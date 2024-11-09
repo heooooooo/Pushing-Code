@@ -22,3 +22,7 @@ bool isIsomorphic(string a, string b) {
 
     return true;
 }
+
+int main(){
+    cout << isIsomorphic("abca", "zbxz");
+}
