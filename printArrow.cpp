@@ -48,3 +48,9 @@ void printArrow(int n, bool left){
         }
     }
 }
+
+int main(){
+    int n;
+    cin >> n;
+    printArrow(n, true);
+}
