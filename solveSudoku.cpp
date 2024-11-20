@@ -44,7 +44,18 @@ void printGrid(vector<vector<int>> grid){
 	clrscr();
 	for (int i = 0; i < 9; i++){
 		for (int j = 0; j < 9; j++){
-			cout << grid[i][j] << " ";
+			if ((j + 1) == 3 || (j + 1) == 6){
+				cout << grid[i][j] << " | ";
+			}
+			else{
+				cout << grid[i][j] << " ";
+			}
+		}
+		if ((i + 1) == 3 || (i + 1) == 6){
+			cout << endl;
+			for (int j = 0; j < 21; j++){
+				cout << "-";
+			}
 		}
 		cout << endl;
 	}
@@ -57,9 +68,12 @@ void solve(vector<vector<int>> &grid){
 				for (int n = 1; n <= 9; n++){
 					if (isValidPlace(grid, i, j, n)){
 						grid[i][j] = n;
-						usleep(1000);
+						printGrid(grid);
+						usleep(10000);
 						solve(grid);
 						grid[i][j] = 0;
+						printGrid(grid);
+						usleep(10000);
 					}
 				}
 				return;
@@ -67,6 +81,7 @@ void solve(vector<vector<int>> &grid){
 		}
 	}
 	printGrid(grid);
+	sleep(100);
 }
 
 int main(){
@@ -79,5 +94,4 @@ int main(){
     }
     
     solve(grid);
-    //printGrid(grid);
 }
