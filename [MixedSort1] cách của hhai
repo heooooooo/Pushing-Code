@@ -1,0 +1,53 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+void swap(int &a, int &b){
+    int temp=a;
+    a=b;
+    b=temp;
+}
+
+int main(){
+    int n;
+    cin>>n;
+    vector<int> mang(n), even, odd;
+    for (int i=0; i<n; i++){
+        cin>>mang[i];
+    }
+    int counteven=0, countodd=0;
+    for (int i=0; i<n; i++){
+        if(mang[i]%2==0){
+            even.push_back(mang[i]);
+            counteven++;
+            }
+        else{
+            odd.push_back(mang[i]);
+            countodd++;
+        }
+    }
+
+    for (int i=0; i< counteven; i++){
+        for(int j=0; j< counteven-1; j++){
+        if(even[j]>even[j+1]){
+            swap(even[j], even[j+1]);
+        }
+    }
+    }
+
+    for(int i=0; i < countodd; i++){
+       for(int j=0; j < countodd-1; j++){
+           if(odd[j]<odd[j+1]){
+               swap(odd[j], odd[j+1]);
+           }
+       }
+    }
+    for(int i=0; i< counteven; i++){
+        cout<<even[i]<<" ";
+    }
+    for(int i=0; i< countodd; i++){
+        cout<<odd[i]<<" ";
+    }
+}
