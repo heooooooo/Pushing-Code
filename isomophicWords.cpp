@@ -2,15 +2,21 @@
 #include <string>
 using namespace std;
 
+int get_length(string a){
+    int i = 0;
+    while (a[i] != '\0'){
+        i++;
+    }
+    return i;
+}
+
 bool isIsomorphic(string a, string b) {
-    if (a.length() != b.length()) return false;
+    int mapAtoB[256] = {0};
+    int mapBtoA[256] = {0};
 
-    char mapAtoB[256] = {0};
-    char mapBtoA[256] = {0};
-
-    for (int i = 0; i < a.length(); ++i) {
-        char charA = a[i];
-        char charB = b[i];
+    for (int i = 0; i < get_length(a); i++) {
+        int charA = a[i];
+        int charB = b[i];
 
         if ((mapAtoB[charA] && mapAtoB[charA] != charB) || (mapBtoA[charB] && mapBtoA[charB] != charA)) {
             return false;
@@ -21,8 +27,4 @@ bool isIsomorphic(string a, string b) {
     }
 
     return true;
-}
-
-int main(){
-    cout << isIsomorphic("abca", "zbxz");
 }
