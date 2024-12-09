@@ -5,9 +5,6 @@ struct date{
     int day, month, year;
 };
 
-///Hàm tính và trả về ngày kế tiếp của ngày hiện tại
-///Hàm không làm thay đổi giá trị của ngày hiện tại
-
 bool isValidDate(const date &d){
     if (d.year >= 1 && d.year <= 2024){
         if (d.month >= 1 && d.month <= 12){

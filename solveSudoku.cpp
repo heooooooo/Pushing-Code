@@ -2,6 +2,7 @@
 #include <vector>
 #include <conio.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 using namespace std;
 
@@ -41,7 +42,7 @@ bool isValidPlace(const vector<vector<int>>& grid, int row, int col, int num){
 }
 
 void printGrid(vector<vector<int>> grid){
-	clrscr();
+	//clrscr();
 	for (int i = 0; i < 9; i++){
 		for (int j = 0; j < 9; j++){
 			if ((j + 1) == 3 || (j + 1) == 6){
